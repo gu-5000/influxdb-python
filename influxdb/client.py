@@ -518,7 +518,7 @@ class InfluxDBClient(object):
         params['q'] = query
         params['db'] = database or self._database
 
-        if epoch is not None:
+        if epoch is not None and epoch.lower() != 'rfc3339':
             params['epoch'] = epoch
 
         if chunked:
