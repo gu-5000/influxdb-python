@@ -1267,6 +1267,7 @@ class _SocketOptionsAdapter(HTTPAdapter):
 
     def __init__(self, *args, **kwargs):
         self.socket_options = kwargs.pop("socket_options", None)
+        self.__attrs__.append("socket_options")
         super(_SocketOptionsAdapter, self).__init__(*args, **kwargs)
 
     def init_poolmanager(self, *args, **kwargs):
